@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Jason Au</title>
+        <link rel="stylesheet" href="styles/main.css" />
+    </head>
+    <body>
+        <div id="container--main">
+            <nav>
+                <h1><a href="#">JA</a></h1>
+
+                <ul id="nav--links">
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li>
+                        <button id="toggleThemeBtn">🌑</button>
+                    </li>
+                </ul>
+            </nav>
+
+            <section id="wrapper--hero" class="section--page">
+                <div>
+                    <h1 id="username">Hey I'm Jason!</h1>
+                    <p id="bio">
+                        I'm a computer science student at Carleton U, Ottawa
+                    </p>
+                    <p>👉 (TODOOOOO) jasonau.dev@gmail.com</p>
+                </div>
+                <img
+                    id="profile--pic"
+                    src="assets/images/memoji.png"
+                    alt="Memoji of Jason!"
+                />
+            </section>
+
+            <section class="section--page">
+                <div id="socials--list">
+                    <a
+                        href="https://www.linkedin.com/in/jason-au-599146188/"
+                        target="_blank"
+                        >Linkedin</a
+                    >
+                    <a href="https://github.com/jasonau3" target="_blank"
+                        >Github</a
+                    >
+                    <a
+                        href="/assets/8_12_2022 - Jason Au - Resume.pdf"
+                        target="_blank"
+                        >Resume</a
+                    >
+                </div>
+            </section>
+
+            <section class="section--page" id="skills">
+                <h2>Skills</h2>
+                <ul id="qualifications--list">
+                    <li>✅ 1 year experience in web development</li>
+                    <li>✅ Experience working in a lab for bioinformatics</li>
+                    <li>
+                        ✅ 3 year experience working in team environment
+                        (lifeguarding)
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section--page" id="experience">
+                <h2>Experience</h2>
+
+                <div class="line-break"></div>
+
+                <div class="card--experience">
+                    <strong
+                        >🔬 Dean's Summer Research Intern | CARLETON UNIVERISITY
+                    </strong>
+                    <p>May 2022 - July 2022</p>
+                    <p>
+                        Collaborated as a team to investigate genes affected by
+                        environmental contaminants in pancreas
+                    </p>
+                    <ul>
+                        <li>
+                            Used Bioconductor packages like DESeq2 for
+                            normalization to be displayed in Heatmaps and
+                            Volcano Plots
+                        </li>
+                        <li>
+                            Wrote a program in Python to web scrap data and
+                            export to Excel
+                        </li>
+                        <li>
+                            Wrote scripts in R to concatenate Excel values and
+                            perform statistical analyses
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="line-break"></div>
+
+                <div class="card--experience">
+                    <strong
+                        >🏊‍♀️ Lifeguard / Swim Instructor | CITY OF OTTAWA
+                    </strong>
+                    <p>September 2019 - Present</p>
+                    <p>
+                        Worked in a team environment to supervise swim patrons
+                        and provided first aid
+                    </p>
+                    <ul>
+                        <li>
+                            Taught swimming lessons to children and ensured that
+                            all level materials were completed
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <footer>Jason Au © 2022. <a href="#">Top</a></footer>
+        </div>
+
+        <script>
+            // Set css theme
+            const setTheme = (themeName) => {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            };
+
+            // Button function
+            btnTheme = document.getElementById('toggleThemeBtn');
+
+            btnTheme.addEventListener('click', () => {
+                // Call setTheme and change button text
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                    btnTheme.innerText = '🌕';
+                } else {
+                    setTheme('theme-dark');
+                    btnTheme.innerText = '🌑';
+                }
+            });
+
+            // On load, get the previous theme
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-dark');
+                } else {
+                    setTheme('theme-light');
+                }
+            })();
+        </script>
+    </body>
+</html>
